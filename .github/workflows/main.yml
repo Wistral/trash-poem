@@ -31,7 +31,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: auto commit and push
       env:
-        GITKEY: ${{ secret.GITKEY }}
+        GITKEY: ${{ secrets.GITKEY }}
       run: |          
         echo https://Wistral:${GITKEY}@github.com > ~/.git-credentials
         git config --global credential.helper store
