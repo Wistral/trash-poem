@@ -1,6 +1,6 @@
 from utils.hitokoto import gen_sentence
 from utils.gtrans import gtrans
-from subprocess import check_call
+import os
 import re
 from pathlib import Path
 import random
@@ -47,10 +47,10 @@ def main():
         print(f'"{gtrans(sentence)}\\n"', file=f)
 
     nt = reset_schedule()
-    check_call(f'git add poem.h {action}')
+    os.system(f'git add poem.h {action}')
     commit_text = f'''Add sentence from {author}, detail: https://hitokoto.cn/?uuid={uuid}\nNext schedule time at {nt}'''
     print(commit_text)
-    check_call(f'git commit -m "{commit_text}"')
+    os.system(f'git commit -m "{commit_text}"')
 
 
 if __name__ == '__main__':
