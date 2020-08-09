@@ -6,7 +6,7 @@ name: machine-compose
 # events but only for the master branch
 on:
   schedule:
-    - cron: '36 17 * * *'
+    - cron: '36 12 * * *'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -36,7 +36,7 @@ jobs:
         git config credential.helper store
         git config user.email "whistral@gmail.com"
         git config user.name "Wistral"
-        bash autocompose.sh
+        python autocompose.py
         git push
         make
         ./read_poem
