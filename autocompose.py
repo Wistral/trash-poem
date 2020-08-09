@@ -46,9 +46,10 @@ def main():
     with open('poem.h', 'a') as f:
         print(f'"{gtrans(sentence)}\\n"', file=f)
 
-    nt = reset_schedule()
-    os.system(f'git add poem.h {action}')
-    commit_text = f'''Add sentence from {author}, detail: https://hitokoto.cn/?uuid={uuid}\nNext schedule time at {nt}'''
+    # nt = reset_schedule()
+    # schedule_comment = f'Next schedule time at {nt}'
+    os.system(f'git add poem.h')
+    commit_text = f'''Add sentence from {author}, detail: https://hitokoto.cn/?uuid={uuid}'''
     print(commit_text)
     os.system(f'git commit -m "{commit_text}"')
 
