@@ -11,7 +11,7 @@ on:
     paths-ignore: 
       - '**.md'
   schedule:
-    - cron: '9 8 * * *'
+    - cron: '9 1 * * *'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
