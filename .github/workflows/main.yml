@@ -50,7 +50,9 @@ jobs:
         git config credential.helper store
         git config user.email "whistral@gmail.com"
         git config user.name "Wistral"
-        python autocompose.py
+        for i in $(seq $(expr $RANDOM % 3)); do
+          python autocompose.py
+        done
         git push
         make
         ./read_poem
